@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Memory Trainer</string>
+    <string name="welcome_message">Willkommen\n%s!</string>
+
+</resources>
