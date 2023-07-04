@@ -45,6 +45,17 @@ class ChooseLevel : AppCompatActivity() {
             R.drawable.bild33
         )
 
+        BilderSpeicher.farben = mutableListOf(
+            R.color.blau,
+            R.color.gelb,
+            R.color.gruen,
+            R.color.lila,
+            R.color.hellBlau,
+            R.color.orange,
+            R.color.purple,
+            R.color.rot
+        )
+
        // val images = listOf(R.drawable.bild1, R.drawable.bild29, R.drawable.bild30, R.drawable.bild31, R.drawable.bild32, R.drawable.bild33)
         val random = Random(System.currentTimeMillis())
 

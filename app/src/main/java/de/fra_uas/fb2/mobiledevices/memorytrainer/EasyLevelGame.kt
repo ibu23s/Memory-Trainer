@@ -22,11 +22,8 @@ class EasyLevelGame : AppCompatActivity() {
     }
 
     private var bildAusErsterAktivität: Int = 0
-    private var bilder = BilderSpeicher.bilder
-    private var neuebilder = BilderSpeicher.neueBilder
     private val aktuelleBilder = IntArray(6)
     private lateinit var imageButtons: Array<ImageButton>
-    private var counter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -108,7 +105,7 @@ class EasyLevelGame : AppCompatActivity() {
                     ).show()
                 }
 
-                if (MyApplication.counter < 5) {
+                if (MyApplication.currentPosition < 5) {
                     val intent = Intent(this, EasyLevel::class.java)
                     startActivity(intent)
                 } else {

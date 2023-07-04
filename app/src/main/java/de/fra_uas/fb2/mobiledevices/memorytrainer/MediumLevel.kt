@@ -4,12 +4,17 @@ import BilderSpeicher
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import kotlin.random.Random
 
 class MediumLevel : AppCompatActivity() {
+
+    private val delayTime: Long = 5000 // Zeit in Millisekunden (hier: 5 Sekunden)
+    private lateinit var handler: Handler
+    private lateinit var runnable: Runnable
 
     private lateinit var imageButtons: Array<ImageView>
     private val aktuelleBilder = IntArray(4)
@@ -23,7 +28,7 @@ class MediumLevel : AppCompatActivity() {
         // Zugriff auf das zufällige Element
         val randomBild = BilderSpeicher.bilder[randomIndex]
 
-        val btnStart = findViewById<Button>(R.id.btnStartMedium)
+
         // Das Bild in einer ImageView anzeigen
         val bildEins = findViewById<ImageView>(R.id.bildEinsMedium)
         val bildZwei = findViewById<ImageView>(R.id.bildZweiMedium)
@@ -42,11 +47,9 @@ class MediumLevel : AppCompatActivity() {
         bilderList.shuffle()
 
         val anzahlBilder = minOf(4, bilderList.size)
-        repeat(anzahlBilder) {
-            val randomIndex = Random.nextInt(bilderList.size)
-            val randomBild = bilderList[randomIndex]
-            BilderSpeicher.bilder.add(randomBild)
-            bilderList.remove(randomBild)
+        repeat(anzahlBilder) { index ->
+            val selectedBild = bilderList[index]
+            aktuelleBilder[index] = selectedBild
         }
 
         BilderSpeicher.bilder.shuffle()
@@ -70,9 +73,12 @@ class MediumLevel : AppCompatActivity() {
             imageButton.setImageResource(selectedBild)
             aktuelleBilder[index] = selectedBild
         }
-
-        btnStart.setOnClickListener {
+        // Handler und Runnable initialisieren
+        handler = Handler()
+        runnable = Runnable {
+            // Code, der nach Ablauf der Zeit ausgeführt wird (Activity-Wechsel)
             val intent = Intent(this, MediumLevelGame::class.java)
+            intent.putExtra("randomBild", randomBild)
             intent.putExtra("randomBild", randomBild)
             intent.putExtra("bildEins", aktuelleBilder[0])
             intent.putExtra("bildZwei", aktuelleBilder[1])
@@ -80,9 +86,12 @@ class MediumLevel : AppCompatActivity() {
             intent.putExtra("bildVier", aktuelleBilder[3])
             EasyLevelGame.MyApplication.currentPosition++
             startActivity(intent)
+            EasyLevelGame.MyApplication.currentPosition++
+            finish() // Optional: Aktuelle Activity beenden, um nicht zurückkehren zu können
         }
 
-
+        // Timer starten
+        handler.postDelayed(runnable, delayTime)
 
     }
 }

@@ -5,233 +5,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg"
-    tools:context=".EasyLevel">
+    tools:context=".HardLevel">
 
     <TextView
         android:id="@+id/tvTitelHard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="Hard"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewEinsHard"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/cardViewHard1"
+        android:layout_width="121dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="144dp"
         android:background="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/bildEinsHard"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:layout_gravity="center"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewZweiHard"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/cardViewHard2"
+        android:layout_width="121dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="56dp"
         android:background="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/bildZweiHard"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:layout_gravity="center"
             tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewDreiHard"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/cardViewHard3"
+        android:layout_width="121dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="284dp"
         android:background="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202">
+        app:layout_constraintTop_toBottomOf="@+id/cardViewHard1">
 
         <ImageView
             android:id="@+id/bildDreiHard"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:layout_gravity="center"
             tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewVierHard"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/cardViewHard4"
+        android:layout_width="121dp"
+        android:layout_height="121dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="284dp"
         android:background="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413">
+        app:layout_constraintTop_toBottomOf="@+id/cardViewHard2"
+        app:layout_constraintVertical_bias="0.508">
 
         <ImageView
             android:id="@+id/bildVierHard"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_gravity="center"
-            tools:srcCompat="@tools:sample/avatars" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewFuenfHard"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/white"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413">
-
-        <ImageView
-            android:id="@+id/bildFuenfHard"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_gravity="center"
-            tools:srcCompat="@tools:sample/avatars" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewSechsHard"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/white"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413">
-
-        <ImageView
-            android:id="@+id/bildSechsHard"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_gravity="center"
-            tools:srcCompat="@tools:sample/avatars" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewSiebenHard"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/white"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.624">
-
-        <ImageView
-            android:id="@+id/bildNeunHard"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_gravity="center"
-            tools:srcCompat="@tools:sample/avatars" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewAchtHard"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/white"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.624">
-
-        <ImageView
-            android:id="@+id/bildAchtHard"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_gravity="center"
-            tools:srcCompat="@tools:sample/avatars" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewNeunHard"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/white"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.624">
-
-        <ImageView
-            android:id="@+id/bildSiebenHard"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:layout_gravity="center"
             tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tvAnsageEasy"
+        android:id="@+id/tvAnsageHard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="560dp"
+        android:layout_marginTop="496dp"
         android:text="Hast du es dir gemerkt?"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -239,23 +119,5 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnStartEasy"
-        android:layout_width="155dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="28dp"
-        android:background="@color/lila"
-        android:text="Start"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvAnsageEasy"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/tvAnsageEasy"
-        app:layout_constraintTop_toBottomOf="@+id/tvAnsageEasy"
-        tools:ignore="TextContrastCheck" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

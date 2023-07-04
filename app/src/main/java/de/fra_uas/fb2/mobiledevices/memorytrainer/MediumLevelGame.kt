@@ -66,12 +66,24 @@ class MediumLevelGame : AppCompatActivity() {
         neueBilder.add(bildAusErsterAktivität4)
 
         val anzahlBilder = minOf(8, bilderList.size)
-        repeat(anzahlBilder) {
+        var addedBilder = 0
+
+        while (addedBilder < anzahlBilder) {
             val randomIndex = Random.nextInt(bilderList.size)
             val randomBild = bilderList[randomIndex]
-            neueBilder.add(randomBild)
-            bilderList.removeAt(randomIndex)
+
+            // Überprüfen, ob das zufällige Bild bereits ausgewählt wurde
+            if (!neueBilder.contains(randomBild)) {
+                neueBilder.add(randomBild)
+                bilderList.removeAt(randomIndex)
+                addedBilder++
+            }
         }
+
+        neueBilder.shuffle()
+
+// Restlicher Code bleibt unverändert
+
 
         neueBilder.shuffle()
 
