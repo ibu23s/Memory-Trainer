@@ -40,7 +40,7 @@ class HardLevelGame : AppCompatActivity() {
         val ibHard11 = findViewById<ImageButton>(R.id.ibHard11)
         val ibHard12 = findViewById<ImageButton>(R.id.ibHard12)
 
-        //EasyLevelGame.MyApplication.counterHard = 4
+        EasyLevelGame.MyApplication.counter = 4
 
         imageButtons = arrayOf(
             ibHard1,
@@ -126,43 +126,26 @@ class HardLevelGame : AppCompatActivity() {
                 ausgewählteBilder.add(selectedBild)
 
                 if (ersteVierBilder.contains(selectedBild)) {
-                    EasyLevelGame.MyApplication.richtig++
+                    EasyLevelGame.MyApplication.richtigHard++
 
                     Toast.makeText(this, "Richtig!", Toast.LENGTH_SHORT).show()
                 } else {
 
                     EasyLevelGame.MyApplication.falsch++
 
-                    Toast.makeText(
-                        this,
-                        "Leider falsch.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this, "Leider falsch.", Toast.LENGTH_SHORT).show()
                 }
+                imageButton.isEnabled = false
 
                 // Überprüfe, ob vier ImageButtons geklickt wurden
                 if (ausgewählteBilder.size == 4) {
                     val intent = Intent(this, ResultsActivity::class.java)
+                    intent.putExtra("sourceActivity", "HardLevelGame")
                     startActivity(intent)
                     finish()
                 }
             }
         }
-
-    }
-    private fun setRandomCardViewBackgroundColor(aktuelleBilder: List<Pair<Int, Int>>): List<Int> {
-        val colors = mutableListOf<Int>()
-        imageButtons.forEachIndexed { index, imageButton ->
-            val cardView = imageButton.parent as CardView
-            val randomColor = if (index >= aktuelleBilder.size) {
-                getRandomColor()
-            } else {
-                aktuelleBilder[index].second
-            }
-            cardView.setCardBackgroundColor(randomColor)
-            colors.add(randomColor)
-        }
-        return colors
     }
 
     private fun getRandomColor(): Int {
@@ -174,7 +157,12 @@ class HardLevelGame : AppCompatActivity() {
             R.color.orange,
             R.color.rot,
             R.color.hellBlau,
-            R.color.purple
+            R.color.purple,
+            R.color.dunkelgruen,
+            R.color.dunkelgelb,
+            R.color.dunkelorange,
+            R.color.pink,
+
         )
         val randomIndex = Random.nextInt(colors.size)
         return resources.getColor(colors[randomIndex], null)

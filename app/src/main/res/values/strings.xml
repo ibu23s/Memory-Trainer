@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">Memory Trainer</string>
-    <string name="welcome_message">Willkommen\n%s!</string>
+    <string name="welcome_message">Memory Trainer</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="start">Start</string>
+    <string name="todo">TODO</string>
+    <string name="hast_du_es_dir_gemerkt">Hast du es dir gemerkt?</string>
+    <string name="choose">Choose!!</string>
+    <string name="high_score">HIGH SCORE</string>
+    <string name="name">Name</string>
+    <string name="punkte">Punkte</string>
+    <string name="reset">RESET</string>
+    <string name="home">HOME</string>
+    <string name="willkommen">Willkommen</string>
+    <string name="bitte_gib_deinen_namen_ein">Bitte gib deinen Namen ein.</string>
+
 
 </resources>

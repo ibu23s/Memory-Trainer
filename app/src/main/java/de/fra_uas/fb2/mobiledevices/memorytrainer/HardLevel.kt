@@ -158,7 +158,11 @@ class HardLevel : AppCompatActivity() {
             R.color.orange,
             R.color.rot,
             R.color.hellBlau,
-            R.color.purple
+            R.color.purple,
+            R.color.dunkelgruen,
+            R.color.dunkelgelb,
+            R.color.dunkelorange,
+            R.color.pink,
         )
         val randomIndex = Random.nextInt(colors.size)
         return resources.getColor(colors[randomIndex], null)

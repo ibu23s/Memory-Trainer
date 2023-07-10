@@ -16,12 +16,18 @@ class EasyLevelGame : AppCompatActivity() {
             var counter = 0
             var currentPosition = 0
             var name: String = ""
-            var richtig = 0
+            var richtigEasy = 0
+            var richtigMedium = 0
+            var richtigHard = 0
+            var richtigEasyKopie = 0
+            var richtigMediumKopie = 0
+            var richtigHardKopie = 0
             var falsch = 0
+            var gesamtPunkte = richtigEasyKopie+ richtigMediumKopie+ richtigHardKopie
         }
     }
 
-    private var bildAusErsterAktivität: Int = 0
+    private var bildAusErsterAktivitaet: Int = 0
     private val aktuelleBilder = IntArray(6)
     private lateinit var imageButtons: Array<ImageButton>
 
@@ -49,8 +55,8 @@ class EasyLevelGame : AppCompatActivity() {
         bilderList.shuffle()
 
         val neueBilder = mutableListOf<Int>()
-        bildAusErsterAktivität = intent.getIntExtra("randomBild", 0)
-        neueBilder.add(bildAusErsterAktivität)
+        bildAusErsterAktivitaet = intent.getIntExtra("randomBild", 0)
+        neueBilder.add(bildAusErsterAktivitaet)
 
         val anzahlBilder = minOf(5, bilderList.size)
         repeat(anzahlBilder) {
@@ -87,9 +93,9 @@ class EasyLevelGame : AppCompatActivity() {
             imageButton.setOnClickListener {
                 val selectedBild = aktuelleBilder[imageButtons.indexOf(imageButton)]
 
-                if (selectedBild == bildAusErsterAktivität) {
+                if (selectedBild == bildAusErsterAktivitaet) {
                     MyApplication.counter++
-                    MyApplication.richtig++
+                    MyApplication.richtigEasy++
 
 
                     Toast.makeText(this, "Richtig!", Toast.LENGTH_SHORT)
@@ -110,9 +116,12 @@ class EasyLevelGame : AppCompatActivity() {
                     startActivity(intent)
                 } else {
                     val intent = Intent(this, ResultsActivity::class.java)
+                    intent.putExtra("sourceActivity", "EasyLevelGame")
                     startActivity(intent)
                 }
             }
         }
     }
+
+
 }

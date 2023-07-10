@@ -5,8 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.RadioGroup
-import android.widget.TextView
 import kotlin.random.Random
 
 class ChooseLevel : AppCompatActivity() {
@@ -14,11 +14,8 @@ class ChooseLevel : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_level)
 
-        val name = intent.getStringExtra("name")
         val btnStart = findViewById<Button>(R.id.btnStartGame)
-        val welcomeMessage = getString(R.string.welcome_message, name)
-        val welcomeTextView = findViewById<TextView>(R.id.welcomeText)
-        welcomeTextView.text = "Willkommen \n ${EasyLevelGame.MyApplication.name}"
+        val ranking = findViewById<ImageButton>(R.id.ranking)
         val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
 
         BilderSpeicher.bilder = mutableListOf(
@@ -82,6 +79,16 @@ class ChooseLevel : AppCompatActivity() {
                 }
 
             }
+        }
+        ranking.setOnClickListener {
+            val intent = Intent(this, HighScore::class.java)
+            EasyLevelGame.MyApplication.currentPosition = 0
+            EasyLevelGame.MyApplication.counter = 0
+            EasyLevelGame.MyApplication.richtigEasy = 0
+            EasyLevelGame.MyApplication.richtigMedium = 0
+            EasyLevelGame.MyApplication.richtigHard = 0
+            startActivity(intent)
+            finish()
         }
 
     }

@@ -5,8 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import kotlin.random.Random
 
@@ -15,7 +13,6 @@ class MediumLevel : AppCompatActivity() {
     private val delayTime: Long = 5000 // Zeit in Millisekunden (hier: 5 Sekunden)
     private lateinit var handler: Handler
     private lateinit var runnable: Runnable
-
     private lateinit var imageButtons: Array<ImageView>
     private val aktuelleBilder = IntArray(4)
 
@@ -74,6 +71,7 @@ class MediumLevel : AppCompatActivity() {
             aktuelleBilder[index] = selectedBild
         }
         // Handler und Runnable initialisieren
+        @Suppress("DEPRECATION")
         handler = Handler()
         runnable = Runnable {
             // Code, der nach Ablauf der Zeit ausgeführt wird (Activity-Wechsel)

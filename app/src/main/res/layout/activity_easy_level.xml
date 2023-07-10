@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="Easy"
+        android:text="@string/easy"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,6 +41,7 @@
             android:layout_width="194dp"
             android:layout_height="187dp"
             android:layout_gravity="center"
+            tools:ignore="ContentDescription,ImageContrastCheck"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
 
@@ -49,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Hast du es dir gemerkt?"
+        android:text="@string/hast_du_es_dir_gemerkt"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +78,7 @@
         android:text="TextView"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/progressBar"
-        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

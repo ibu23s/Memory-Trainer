@@ -1,13 +1,11 @@
 package de.fra_uas.fb2.mobiledevices.memorytrainer
 
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,16 +15,19 @@ class MainActivity : AppCompatActivity() {
         val nameEditText = findViewById<EditText>(R.id.etName)
         val btnStart = findViewById<Button>(R.id.btnStart)
 
+        val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
         btnStart.setOnClickListener {
-            EasyLevelGame.MyApplication.name = nameEditText.text.toString()
+            val name = nameEditText.text.toString()
+            editor.putString("name", name)
+            editor.apply()
+
             val intent = Intent(this, ChooseLevel::class.java)
-            intent.putExtra("name", EasyLevelGame.MyApplication.name)
+            intent.putExtra("name", name)
             startActivity(intent)
         }
+
     }
 }
-
-
-
-
 

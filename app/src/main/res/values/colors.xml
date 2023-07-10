@@ -4,10 +4,14 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lila">#BDA7E6</color>
     <color name="blau">#3F51B5</color>
-    <color name="gruen">#4CAF50</color>
+    <color name="gruen">#3ADD41</color>
     <color name="gelb">#FFEB3B</color>
     <color name="orange">#FF9800</color>
     <color name="rot">#FF5722</color>
     <color name="hellBlau">#00BCD4</color>
     <color name="purple">#361C67</color>
+    <color name="dunkelgruen">#07670C</color>
+    <color name="dunkelgelb">#91840E</color>
+    <color name="dunkelorange">#976720</color>
+    <color name="pink">#EA8465</color>
 </resources>

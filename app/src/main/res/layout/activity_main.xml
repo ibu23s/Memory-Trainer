@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Willkommen"
+                android:text="@string/willkommen"
                 android:textColor="#363A43"
                 android:textSize="30sp"
                 android:textStyle="bold"/>
@@ -46,11 +46,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginTop="16dp"
-                android:text="Bitte gib deinen Namen ein."
+                android:gravity="center"
+                android:text="@string/bitte_gib_deinen_namen_ein"
                 android:textColor="#7A8089"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                tools:ignore="TextContrastCheck" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -66,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Name"
                     android:textColor="#363A43"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="HardcodedText,SpeakableTextPresentCheck,VisualLintTextFieldSize" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,7 +79,8 @@
                 android:background="@color/lila"
                 android:text="Start"
                 android:textColor="@color/white"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

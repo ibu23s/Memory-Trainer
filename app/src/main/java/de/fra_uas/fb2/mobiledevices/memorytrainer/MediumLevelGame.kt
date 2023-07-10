@@ -8,16 +8,14 @@ import android.widget.Toast
 import kotlin.random.Random
 
 class MediumLevelGame : AppCompatActivity() {
-    private var bildAusErsterAktivität1: Int = 0
-    private var bildAusErsterAktivität2: Int = 0
-    private var bildAusErsterAktivität3: Int = 0
-    private var bildAusErsterAktivität4: Int = 0
-    private var bilder = BilderSpeicher.bilder
-    private var neuebilder = BilderSpeicher.neueBilder
+    private var bildAusErsterAktivitaet1: Int = 0
+    private var bildAusErsterAktivitaet2: Int = 0
+    private var bildAusErsterAktivitaet3: Int = 0
+    private var bildAusErsterAktivitaet4: Int = 0
     private val aktuelleBilder = IntArray(12)
     private lateinit var imageButtons: Array<ImageButton>
-    private var counter = 0
-    private val ausgewählteBilder = mutableListOf<Int>()
+
+    private val ausgewaehlteBilder = mutableListOf<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,15 +53,15 @@ class MediumLevelGame : AppCompatActivity() {
         bilderList.shuffle()
 
         val neueBilder = mutableListOf<Int>()
-        bildAusErsterAktivität1 = intent.getIntExtra("bildEins", 0)
-        bildAusErsterAktivität2 = intent.getIntExtra("bildZwei", 0)
-        bildAusErsterAktivität3 = intent.getIntExtra("bildDrei", 0)
-        bildAusErsterAktivität4 = intent.getIntExtra("bildVier", 0)
+        bildAusErsterAktivitaet1 = intent.getIntExtra("bildEins", 0)
+        bildAusErsterAktivitaet2 = intent.getIntExtra("bildZwei", 0)
+        bildAusErsterAktivitaet3 = intent.getIntExtra("bildDrei", 0)
+        bildAusErsterAktivitaet4 = intent.getIntExtra("bildVier", 0)
 
-        neueBilder.add(bildAusErsterAktivität1)
-        neueBilder.add(bildAusErsterAktivität2)
-        neueBilder.add(bildAusErsterAktivität3)
-        neueBilder.add(bildAusErsterAktivität4)
+        neueBilder.add(bildAusErsterAktivitaet1)
+        neueBilder.add(bildAusErsterAktivitaet2)
+        neueBilder.add(bildAusErsterAktivitaet3)
+        neueBilder.add(bildAusErsterAktivitaet4)
 
         val anzahlBilder = minOf(8, bilderList.size)
         var addedBilder = 0
@@ -72,7 +70,7 @@ class MediumLevelGame : AppCompatActivity() {
             val randomIndex = Random.nextInt(bilderList.size)
             val randomBild = bilderList[randomIndex]
 
-            // Überprüfen, ob das zufällige Bild bereits ausgewählt wurde
+            // Überprüfen, ob das zufaellige Bild bereits ausgewaehlt wurde
             if (!neueBilder.contains(randomBild)) {
                 neueBilder.add(randomBild)
                 bilderList.removeAt(randomIndex)
@@ -82,7 +80,7 @@ class MediumLevelGame : AppCompatActivity() {
 
         neueBilder.shuffle()
 
-// Restlicher Code bleibt unverändert
+// Restlicher Code bleibt unveraendert
 
 
         neueBilder.shuffle()
@@ -98,15 +96,15 @@ class MediumLevelGame : AppCompatActivity() {
         imageButtons.forEach { imageButton ->
             imageButton.setOnClickListener {
                 val selectedBild = aktuelleBilder[imageButtons.indexOf(imageButton)]
-                ausgewählteBilder.add(selectedBild)
+                ausgewaehlteBilder.add(selectedBild)
 
-                if (selectedBild == bildAusErsterAktivität1 ||
-                    selectedBild == bildAusErsterAktivität2 ||
-                    selectedBild == bildAusErsterAktivität3 ||
-                    selectedBild == bildAusErsterAktivität4
+                if (selectedBild == bildAusErsterAktivitaet1 ||
+                    selectedBild == bildAusErsterAktivitaet2 ||
+                    selectedBild == bildAusErsterAktivitaet3 ||
+                    selectedBild == bildAusErsterAktivitaet4
                 ) {
                     EasyLevelGame.MyApplication.counter++
-                    EasyLevelGame.MyApplication.richtig++
+                    EasyLevelGame.MyApplication.richtigMedium++
 
                     Toast.makeText(this, "Richtig!", Toast.LENGTH_SHORT).show()
                 } else {
@@ -114,15 +112,14 @@ class MediumLevelGame : AppCompatActivity() {
                     EasyLevelGame.MyApplication.falsch++
 
                     Toast.makeText(
-                        this,
-                        "Leider falsch.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                        this, "Leider falsch.", Toast.LENGTH_SHORT).show()
                 }
+                imageButton.isEnabled = false
 
                 // Überprüfe, ob vier ImageButtons geklickt wurden
-                if (ausgewählteBilder.size == 4) {
+                if (ausgewaehlteBilder.size == 4) {
                     val intent = Intent(this, ResultsActivity::class.java)
+                    intent.putExtra("sourceActivity", "MediumLevelGame")
                     startActivity(intent)
                 }
             }
